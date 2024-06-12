@@ -1,0 +1,320 @@
+:root{
+
+    /*Color variables*/
+
+    --Red: hsl(0, 100%, 68%);
+    --White: #fff;
+
+    --VeryDarkBlue: hsl(230, 29%, 20%);
+    --DarkGrayishBlue: hsl(230, 11%, 40%);
+    --GrayishBlue: hsl(231, 7%, 65%);
+    --LightGrayishBlue: hsl(207, 33%, 95%);
+
+    
+
+    /*Font variables*/
+
+
+    --BarlowCondensed: 'Barlow Condensed', sans-serif;
+    --Barlow: '"Barlow', sans-serif;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*{
+  margin: 0;
+}
+html{
+  font-size: 62.5%; /*makes font size 10px*/
+  -webkit-font-smoothing: antialiased;
+}
+body{
+  font-size: 1.4rem;
+  font-family: var(--Barlow);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+a{
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+p{
+  line-height: 1.5;
+}
+
+
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+/*----------NAVIGATION----------*/
+header{
+  height: 100px;
+  
+}
+header .container{
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav{
+  display:none;
+  height: 200px;
+  width: 80%;
+  background-color: var(--White);
+  box-shadow: -1px 10px 20px -7px rgba(80, 80, 80, 0.75);
+  position: absolute;
+  left: 10%;
+  top: 100px;
+}
+
+nav a{
+  text-transform: uppercase;
+  font-family: var(--BarlowCondensed);
+  font-weight: 700;
+  color: var(--VeryDarkBlue);
+}
+
+.login{
+  width: 80%;
+  text-align: center;
+  color: var(--GrayishBlue);
+  border-top: 1px solid var(--GrayishBlue);
+  padding: 20px 0px;
+}
+.mobileNav-active{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo{
+  width: 25px;
+}
+.hamburger{
+  cursor: pointer;
+}
+
+
+/*----------HERO SECTION----------*/
+
+.hero{
+  height: 75vh;
+  padding: 20px 0px;
+  
+  background-image: url(/images/illustration-devices.svg);
+  background-repeat: no-repeat;
+  background-size: 135%;
+}
+.hero-content{
+  height: inherit;
+  display: flex;
+  align-items: flex-end;
+}
+.hero .container{
+  height: inherit;
+  
+
+}
+
+.hero-content p{
+  color: var(--GrayishBlue);
+  
+}
+.hero-content .subtitle{
+  font-family: var(--BarlowCondensed);
+  text-transform: uppercase;
+  
+  letter-spacing: 5px;
+}
+
+.hero-content span{
+  letter-spacing: 1px;
+  background-color: var(--VeryDarkBlue);
+  color: white;
+  padding: 5px 10px; 
+  margin-right: 18px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: var(--BarlowCondensed);
+  font-size: 3.2rem;
+  letter-spacing: .5px;
+  color: var(--VeryDarkBlue);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 18px 0px 20px 0px;
+}
+.hero-content .text{
+  margin-bottom: 30px;
+}
+
+.hero-content a{
+
+  padding: 8px 12.5px;
+  text-transform: uppercase;
+  font-family: var(--BarlowCondensed);
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;;
+}
+
+.hero-content .actn-btn-colored{
+  background-color: var(--Red);
+  color: var(--LightGrayishBlue);
+}
+.hero-content .actn-btn{
+  color: var(--DarkGrayishBlue);
+}
+
+.hero-design-element{
+  width: 50%;
+  height: 400px;
+  background-color: var(--LightGrayishBlue);
+  border-bottom-left-radius: 75px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  
+}
+
+
+/*------------- ACTIVE STATES-----------*/
+
+.hero-content .actn-btn-colored:hover{
+  opacity: .85;
+}
+
+
+/*--------------------Responsiveness-----------------*/
+
+@media screen and (min-width: 767px){
+  .hero{
+    background-size: 70%;
+    background-position: center 0;
+  }
+  .hero-content{
+    width: 80%;
+    justify-content: center;
+  }
+  body{
+    font-size: 1.6rem;
+  }
+  a{
+    font-size: 1.6rem;
+  }
+  .hero-content a{
+    padding: 15px 25px;
+  }
+  
+}
+
+@media screen and (min-width: 1024px){
+  
+  header .container{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav{
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    width: 40%;
+    background-color:transparent;
+    box-shadow: none;
+    position:static;  
+    left: 10%;
+    top: 100px;
+  }
+  .login{
+    width: auto;
+    margin-left: 45px;
+    color: var(--GrayishBlue);
+    border-top: none;
+    padding: 0px;
+  }
+  .login::before{
+    content:'';
+    display: inline-block;
+    position: relative;
+    left: -30px;
+    top: -4px;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-color: var(--GrayishBlue);
+  }
+  nav a:hover{
+    text-decoration: underline;
+  }
+
+  .hamburger{
+    display: none;
+  }
+
+  .container{
+    width: 80%;
+  }
+
+  .hero{
+    background-size: 800px;
+    background-position: 550px center;
+  }
+  .hero-content{
+    width: 48%;
+    
+    justify-content: flex-start;
+    align-items: center;
+  }
+  body{
+    font-size: 1.8rem;
+  }
+  h1 {
+    font-size: 4.8rem;
+    margin: 18px 0px 20px 0px;
+  }
+  .hero-content .text{
+    margin-bottom: 70px;
+  }
+  a{
+    font-size: 1.8rem;
+  }
+  
+}
+
+@media screen and (min-width: 1400px){
+  .hero{
+    background-position: 750px center;
+  }
+}
+@media screen and (min-width: 1600px){
+  .hero{
+    background-size: 1100px;
+    background-position: 950px center;
+  }
+}
+
